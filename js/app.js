@@ -128,6 +128,15 @@ $(document).ready(function() {
                 $(this).attr('data-click', 2);
                 card.css('opacity', '0.5');
                 clickNum++;
+                if (manacost > 7) {
+                    var manaCount = parseInt($('.mana-count7').text());
+                    manaCount++;
+                    $('.mana-count7').text(manaCount);
+                } else {
+                    var manaCount = parseInt($('.mana-count' + manacost).text());
+                    manaCount++;
+                    $('.mana-count'+ manacost).text(manaCount);
+                }
                 increaseDataCount($(this));
                 progressBar();
                 return false;
@@ -142,6 +151,15 @@ $(document).ready(function() {
             .attr('data-click', clickNum)
             .html('<span class="mana-cost"> ' + manacost + ' </span>' + cardName + '<span class="quantity"> x 1</span>');
             li.appendTo('.cardlist');
+            if (manacost > 7) {
+                var manaCount = parseInt($('.mana-count7').text());
+                manaCount++;
+                $('.mana-count7').text(manaCount);
+            } else {
+                var manaCount = parseInt($('.mana-count' + manacost).text());
+                manaCount++;
+                $('.mana-count'+ manacost).text(manaCount);
+            }
             increaseDataCount($(this));
             progressBar();
             sortList();
@@ -156,6 +174,15 @@ $(document).ready(function() {
             .attr('data-click', clickNum)
             .html('<span class="mana-cost"> ' + manacost + ' </span>' + cardName + '<span class="quantity"> x 1</span>');;
             li.appendTo('.cardlist');
+            if (manacost > 7) {
+                var manaCount = parseInt($('.mana-count7').text());
+                manaCount++;
+                $('.mana-count7').text(manaCount);
+            } else {
+                var manaCount = parseInt($('.mana-count' + manacost).text());
+                manaCount++;
+                $('.mana-count'+ manacost).text(manaCount);
+            }
             increaseDataCount($(this));
             progressBar();
             sortList();
@@ -168,10 +195,20 @@ $(document).ready(function() {
     // Removing cards from the list
     $('.cardlist').on('click', 'li', function() {
         var listElem = $(this);
+        var manacost = $(this).attr('cost');
         if ($(this).hasClass('Legendary')) {
             var id = $(this).attr('data-id');
             decreaseDataCount(listElem);
             progressBar();
+            if (manacost > 7) {
+                var manaCount = parseInt($('.mana-count7').text());
+                manaCount--;
+                $('.mana-count7').text(manaCount);
+            } else {
+                var manaCount = parseInt($('.mana-count' + manacost).text());
+                manaCount--;
+                $('.mana-count'+ manacost).text(manaCount);
+            }
             $(this).remove();
             $.each($('section img'), function(index, el) {
                 if ($(this).attr('data-id') === id) {
@@ -183,6 +220,15 @@ $(document).ready(function() {
             if ($(this).attr('data-click') == 2) {
                 var id = $(this).attr('data-id');
                 $(this).find('span.quantity').text(' x 1');
+                if (manacost > 7) {
+                    var manaCount = parseInt($('.mana-count7').text());
+                    manaCount--;
+                    $('.mana-count7').text(manaCount);
+                } else {
+                    var manaCount = parseInt($('.mana-count' + manacost).text());
+                    manaCount--;
+                    $('.mana-count'+ manacost).text(manaCount);
+                }
                 $.each($('section img'), function(index, el) {
                     if ($(this).attr('data-id') === id) {
                         $(this).attr('data-click', 1);
@@ -194,6 +240,15 @@ $(document).ready(function() {
                 $(this).attr('data-click', 1);
             } else if ($(this).attr('data-click') == 1) {
                 var id = $(this).attr('data-id');
+                if (manacost > 7) {
+                    var manaCount = parseInt($('.mana-count7').text());
+                    manaCount--;
+                    $('.mana-count7').text(manaCount);
+                } else {
+                    var manaCount = parseInt($('.mana-count' + manacost).text());
+                    manaCount--;
+                    $('.mana-count'+ manacost).text(manaCount);
+                }
                 $.each($('section img'), function(index, el) {
                     if ($(this).attr('data-id') === id) {
                         $(this).attr('data-click', 0);
@@ -226,8 +281,10 @@ $(document).ready(function() {
         var bar = $('<div>').addClass('mana cost' + i)
         .attr('data-count', 0);
         var crystal = $('<p>' + i + '</p>').addClass('crystal');
+        var cardCounter = $('<p>0</p>').addClass('mana-count' + i);
         div.appendTo('.mana-graph');
         crystal.appendTo(div);
+        cardCounter.prependTo(div);
         bar.appendTo(div);
     }
     $('.crystal').eq(7).text('7+');
@@ -311,7 +368,4 @@ $(document).ready(function() {
             $('.neutral-cards').css('top', neutralCardsPosition + 'px');
         }
     });
-
-
-
 });

@@ -52,6 +52,7 @@ span.quantity {
 .mana-graph {
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
 p.curve {
@@ -99,6 +100,12 @@ h1 {
         transform: rotate(180deg);
         position: absolute;
         top: -28px;
+        right: 10px;
+    }
+    p[class^="mana-count"] {
+        transform: rotate(180deg);
+        position: absolute;
+        top: 201px;
         right: 10px;
     }
     .cost0,
