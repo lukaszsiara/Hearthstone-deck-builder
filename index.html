@@ -3,26 +3,53 @@
     <head>
         <meta charset="utf-8">
         <title>Hearthstone deck builder</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="heroes"></div>
-        <div class="app">
-            <div class="hero-button">Class</div>
-            <div class="neutral-button">Neutral</div>
-            <section>
-                <div class="hero-cards"></div>
-                <div class="neutral-cards"></div>
-            </section>
-            <aside>
-                <ul class="cardlist"></ul>
-            </aside>
+        <div class="container">
+            <h1>CHOOSE YOUR HERO</h1>
+            <div class="heroes">
+            </div>
+            <div class="app">
+                <h2>CARD SELECT</h2>
+                <div class="row">
+                    <div class="hero-button"></div>
+                    <div class="neutral-button"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <section>
+                            <div class="hero-cards"></div>
+                            <div class="neutral-cards"></div>
+                        </section>
+                        <div class="prev"><i class="fa fa-caret-left" aria-hidden="true"></i></div>
+                        <div class="next"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="curve">Mana curve</p>
+                        <div class="mana-graph">
+                        </div>
+                        <aside>
+                            <div class="card-counter">0/30 cards</div>
+                            <ul class="cardlist"></ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="line"></div>
+                <p>Powered by ŁS &copy;</p>
+            </footer>
         </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -1,0 +1,159 @@
+$colors: (
+    background-color: #2B2B2B,
+    text-color: #FCFCFC,
+    tabs: #011936,
+    secondary: #406E8E,
+    bar: #717679
+);
+
+body {
+    color: map-get($colors, text-color);
+    background-image: url("images/pattern.png");
+}
+
+footer {
+    margin-top: 30px;
+    .line {
+        width: 100%;
+        height: 3px;
+        background: map-get($colors, bar);
+    }
+    p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+
+img {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cardlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        border: 1px solid map-get($colors, secondary);
+    }
+}
+span.mana-cost {
+    background: map-get($colors, secondary);
+    margin-right: 15px;
+    padding: 2px;
+    padding-left: 6px;
+}
+span.quantity {
+    float: right;
+    margin-right: 10px;
+}
+.mana-graph {
+    display: flex;
+    justify-content: space-between;
+}
+
+p.curve {
+    background: map-get($colors, tabs);
+    padding: 10px 0;
+    padding-left: 10px;
+}
+.heroes {
+    display: flex;
+    justify-content: space-between;
+    div[hero] {
+        width: 110px;
+        height: 590px;
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+    }
+}
+h1 {
+    color: map-get($colors, text-color);
+    margin-left: 15px;
+}
+.heroes {
+    div {
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: grayscale(0%);
+            cursor: pointer;
+            -webkit-box-shadow: -1px 13px 90px -12px #1E8FE5;
+            -moz-box-shadow: -1px 13px 90px -12px #1E8FE5;
+            box-shadow: -1px 13px 90px -12px #1E8FE5;
+        }
+    }
+}
+
+
+.bar-wrap {
+    width: 30px;
+    height: 200px;
+    background: map-get($colors, bar);
+    transform: rotate(180deg);
+    position: relative;
+    .crystal {
+        transform: rotate(180deg);
+        position: absolute;
+        top: -28px;
+        right: 10px;
+    }
+    .cost0,
+    .cost1,
+    .cost2,
+    .cost3,
+    .cost4,
+    .cost5,
+    .cost6,
+    .cost7 {
+        width: 100%;
+        background: map-get($colors, secondary);
+    }
+}
+
+section {
+    height: 636px;
+    overflow: hidden;
+    img {
+        width: 140px;
+    }
+}
+
+.neutral-button img, .hero-button img {
+    max-width: 50px;
+    height: auto;
+    margin-left: 40px;
+}
+.neutral-button p {
+    margin-left: 30px;
+}
+.hero-button p {
+    margin-left: 35px;
+}
+
+.hero-cards, .neutral-cards {
+    position: relative;
+
+}
+.card-counter {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.fa-caret-left {
+    font-size: 80px;
+    position: absolute;
+    top: 290px;
+    left: -25px;
+    cursor: pointer;
+}
+.fa-caret-right {
+    font-size: 80px;
+    position: absolute;
+    top: 290px;
+    left: 723px;
+    cursor: pointer;
+}
