@@ -11,12 +11,13 @@ $(document).ready(function() {
         'Warlock',
         'Warrior'
     ];
+
     $('.neutral-button').html('<img src="images/Neutralicon.png"><p>Neutral</p>');
     $('.app').hide();
-    $('.hero-cards').addClass('active');
+    $('.neutral-cards').addClass('active');
     $.each(characterClasses, function(i, character) {
         var heroClass = $('<div>');
-        heroClass.css('background-image', 'url("images/' + character + '.jpg")')
+        heroClass.css('background-image', 'url("images/' + character + '.png")')
         .attr('hero', character);
         heroClass.appendTo('.heroes');
     });
@@ -27,7 +28,7 @@ $(document).ready(function() {
         $('.hero-button').html('<img src="images/' + hero + 'icon.png"><p>' + hero + '</p>');
         $('.heroes').hide();
         $('h1').hide();
-        $('.neutral-cards').hide();
+        $('.hero-cards').hide();
         $('.app').show();
         loadHeroCards(hero);
     });
@@ -48,7 +49,6 @@ $(document).ready(function() {
         $.each(availableCards, function(i, expansion) {
             $.each(expansion, function(index, card) {
                 if (card.collectible === true && card.type !== 'Hero' && card.playerClass === 'Neutral') {
-                    // var div = $('<div>').addClass('page');
                     var img = $('<img>', {
                         'src': card.img,
                         'name': card.name,
