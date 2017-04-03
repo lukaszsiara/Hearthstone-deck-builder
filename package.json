@@ -1,7 +1,7 @@
 {
   "name": "hearthstone-deck-builder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hearthstone deck builder",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-sass": "^3.1.0",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukaszsiara/Hearthstone-deck-builder.git"
+    "url": "git+https://github.com/lukaszsiara/hearthstone-deck-builder.git"
   },
-  "author": "",
+  "author": "Łukasz Siara",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lukaszsiara/Hearthstone-deck-builder/issues"
+    "url": "https://github.com/lukaszsiara/hearthstone-deck-builder/issues"
   },
-  "homepage": "https://github.com/lukaszsiara/Hearthstone-deck-builder#readme"
+  "homepage": "https://github.com/lukaszsiara/hearthstone-deck-builder#readme"
 }
